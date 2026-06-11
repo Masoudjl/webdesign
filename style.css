@@ -1,0 +1,759 @@
+@font-face {
+  font-family: "Yekan";
+  src: url("Yekan.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Vazir";
+  src: url("Vazir.woff2") format("woff2");
+}
+
+:root {
+  --primary: #0066ff;
+  --primary-dark: #0052cc;
+  --secondary: #00b7ff;
+
+  --text: #111111;
+  --text-light: #6f6f6f;
+
+  --white: #ffffff;
+
+  --border: #ececec;
+
+  --shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
+
+  --shadow-hover: 0 25px 60px rgba(0, 102, 255, 0.15);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Vazir", sans-serif;
+  background: #ffffff;
+  color: var(--text);
+  overflow-x: hidden;
+  line-height: 2;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ===== Scrollbar ===== */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f4f4f4;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0066ff;
+  border-radius: 20px;
+}
+
+/* ===== Hero ===== */
+
+.hero {
+  min-height: 100vh;
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+  padding: 30px 8%;
+}
+
+.hero::before {
+  content: "";
+
+  position: absolute;
+
+  width: 700px;
+  height: 700px;
+
+  background: radial-gradient(rgba(0, 102, 255, 0.12), transparent 70%);
+
+  top: -350px;
+  right: -250px;
+}
+
+.hero::after {
+  content: "";
+
+  position: absolute;
+
+  width: 600px;
+  height: 600px;
+
+  background: radial-gradient(rgba(0, 183, 255, 0.1), transparent 70%);
+
+  bottom: -300px;
+  left: -250px;
+}
+
+/* ===== Navigation ===== */
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position: relative;
+  z-index: 10;
+}
+
+nav ul {
+  display: flex;
+  gap: 35px;
+}
+
+nav ul a {
+  color: #222;
+  font-weight: 500;
+  position: relative;
+}
+
+nav ul a::after {
+  content: "";
+
+  position: absolute;
+
+  width: 0;
+  height: 2px;
+
+  background: var(--primary);
+
+  bottom: -8px;
+  right: 0;
+
+  transition: 0.35s;
+}
+
+nav ul a:hover::after {
+  width: 100%;
+}
+
+/* ===== Logo ===== */
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-icon {
+  width: 58px;
+  height: 58px;
+
+  border-radius: 18px;
+
+  background: linear-gradient(135deg, #0066ff, #00b7ff);
+
+  color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: "Yekan";
+  font-size: 30px;
+
+  box-shadow: 0 15px 35px rgba(0, 102, 255, 0.25);
+}
+
+.logo-text span {
+  display: block;
+
+  font-family: "Yekan";
+
+  font-size: 24px;
+
+  color: #111;
+}
+
+.logo-text small {
+  color: #777;
+  letter-spacing: 2px;
+}
+
+/* ===== Hero Content ===== */
+
+.hero-content {
+  max-width: 850px;
+
+  margin: auto;
+
+  text-align: center;
+
+  padding-top: 140px;
+
+  position: relative;
+  z-index: 10;
+}
+
+.hero-badge {
+  display: inline-block;
+
+  background: #f5f9ff;
+
+  color: var(--primary);
+
+  padding: 10px 20px;
+
+  border-radius: 50px;
+
+  border: 1px solid #d8e8ff;
+
+  margin-bottom: 30px;
+}
+
+.hero-content h1 {
+  font-family: "Yekan";
+
+  font-size: 72px;
+
+  line-height: 1.4;
+
+  margin-bottom: 25px;
+}
+
+.hero-content p {
+  font-size: 21px;
+
+  color: var(--text-light);
+
+  max-width: 800px;
+
+  margin: auto;
+}
+
+.hero-buttons {
+  margin-top: 40px;
+
+  display: flex;
+
+  justify-content: center;
+
+  gap: 15px;
+
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #0066ff, #00a6ff);
+
+  color: #fff;
+
+  padding: 16px 34px;
+
+  border-radius: 60px;
+
+  font-weight: 700;
+
+  transition: 0.35s;
+
+  box-shadow: 0 15px 35px rgba(0, 102, 255, 0.25);
+}
+
+.btn-primary:hover {
+  transform: translateY(-4px);
+}
+
+.btn-secondary {
+  background: #fff;
+
+  color: #111;
+
+  border: 1px solid #ddd;
+
+  padding: 16px 34px;
+
+  border-radius: 60px;
+
+  transition: 0.35s;
+}
+
+.btn-secondary:hover {
+  border-color: #0066ff;
+
+  color: #0066ff;
+}
+
+/* ===================================
+   Stats Section
+=================================== */
+
+.stats {
+  margin-top: -60px;
+  position: relative;
+  z-index: 20;
+}
+
+.stats .container {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 25px;
+}
+
+.stat-box {
+  background: #fff;
+
+  border: 1px solid #efefef;
+
+  border-radius: 28px;
+
+  padding: 35px;
+
+  text-align: center;
+
+  box-shadow: var(--shadow);
+
+  transition: 0.35s;
+}
+
+.stat-box:hover {
+  transform: translateY(-10px);
+
+  box-shadow: var(--shadow-hover);
+}
+
+.stat-box h2 {
+  font-family: "Yekan";
+
+  font-size: 42px;
+
+  color: var(--primary);
+
+  margin-bottom: 10px;
+}
+
+.stat-box p {
+  color: var(--text-light);
+}
+
+/* ===================================
+   Sections
+=================================== */
+
+section {
+  padding: 120px 0;
+}
+
+.section-title {
+  text-align: center;
+
+  margin-bottom: 70px;
+}
+
+.section-title span {
+  display: inline-block;
+
+  color: var(--primary);
+
+  background: #f4f8ff;
+
+  border: 1px solid #dbe8ff;
+
+  padding: 8px 18px;
+
+  border-radius: 40px;
+
+  margin-bottom: 20px;
+}
+
+.section-title h2 {
+  font-family: "Yekan";
+
+  font-size: 52px;
+
+  line-height: 1.5;
+
+  max-width: 800px;
+
+  margin: auto;
+}
+
+/* ===================================
+   Services
+=================================== */
+
+.services-preview .container {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+  gap: 30px;
+}
+
+.service-card {
+  background: #fff;
+
+  border-radius: 30px;
+
+  padding: 40px;
+
+  border: 1px solid #ededed;
+
+  box-shadow: var(--shadow);
+
+  transition: 0.4s;
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: "";
+
+  position: absolute;
+
+  width: 120px;
+  height: 120px;
+
+  border-radius: 50%;
+
+  background: rgba(0, 102, 255, 0.05);
+
+  top: -40px;
+  left: -40px;
+}
+
+.service-card:hover {
+  transform: translateY(-12px);
+
+  box-shadow: var(--shadow-hover);
+}
+
+.service-icon {
+  width: 70px;
+  height: 70px;
+
+  border-radius: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 32px;
+
+  background: linear-gradient(135deg, #0066ff, #00b7ff);
+
+  color: #fff;
+
+  margin-bottom: 25px;
+}
+
+.service-card h3 {
+  font-family: "Yekan";
+
+  font-size: 24px;
+
+  margin-bottom: 15px;
+}
+
+.service-card p {
+  color: var(--text-light);
+}
+
+/* ===================================
+   Features
+=================================== */
+
+.why-us .container {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+
+  gap: 25px;
+}
+
+.feature-box {
+  background: #fff;
+
+  border: 1px solid #ededed;
+
+  border-radius: 25px;
+
+  padding: 35px;
+
+  transition: 0.35s;
+
+  box-shadow: var(--shadow);
+}
+
+.feature-box:hover {
+  transform: translateY(-8px);
+
+  border-color: #d7e7ff;
+}
+
+.feature-box h3 {
+  font-family: "Yekan";
+
+  font-size: 24px;
+
+  margin-bottom: 12px;
+
+  color: var(--primary);
+}
+
+.feature-box p {
+  color: var(--text-light);
+}
+
+/* ===================================
+   CTA
+=================================== */
+
+.cta {
+  margin: 80px auto;
+
+  width: 90%;
+
+  max-width: 1300px;
+
+  border-radius: 40px;
+
+  padding: 90px 50px;
+
+  text-align: center;
+
+  color: #fff;
+
+  background: linear-gradient(135deg, #0066ff, #00b7ff);
+
+  box-shadow: 0 30px 60px rgba(0, 102, 255, 0.25);
+}
+
+.cta h2 {
+  font-family: "Yekan";
+
+  font-size: 54px;
+
+  margin-bottom: 20px;
+}
+
+.cta p {
+  font-size: 20px;
+
+  opacity: 0.95;
+
+  margin-bottom: 35px;
+}
+
+.cta .btn-primary {
+  background: #fff;
+
+  color: #0066ff;
+
+  box-shadow: none;
+}
+
+/* ===================================
+   Footer
+=================================== */
+
+footer {
+  margin-top: 120px;
+
+  border-top: 1px solid #efefef;
+
+  background: #fff;
+}
+
+.footer-content {
+  width: 90%;
+  max-width: 1200px;
+
+  margin: auto;
+
+  padding: 70px 0;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 40px;
+}
+
+.footer-content h3 {
+  font-family: "Yekan";
+
+  margin-bottom: 15px;
+}
+
+.footer-content p {
+  color: var(--text-light);
+}
+
+.copyright {
+  text-align: center;
+
+  padding: 25px;
+
+  border-top: 1px solid #efefef;
+
+  color: #777;
+}
+
+/* ===================================
+   Animations
+=================================== */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+.hero-content {
+  animation: fadeUp 1s ease;
+}
+
+/* ===================================
+   Responsive
+=================================== */
+
+@media (max-width: 1100px) {
+  .hero-content h1 {
+    font-size: 58px;
+  }
+
+  .section-title h2 {
+    font-size: 42px;
+  }
+}
+
+@media (max-width: 900px) {
+  .stats .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+
+    gap: 25px;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 20px;
+  }
+
+  .hero-content {
+    padding-top: 90px;
+  }
+
+  .hero-content h1 {
+    font-size: 42px;
+  }
+
+  .hero-content p {
+    font-size: 18px;
+  }
+
+  .section-title h2 {
+    font-size: 34px;
+  }
+
+  .cta h2 {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 500px) {
+  .stats .container {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-content h1 {
+    font-size: 34px;
+  }
+
+  .logo-text small {
+    display: none;
+  }
+
+  .service-card,
+  .feature-box,
+  .stat-box {
+    padding: 25px;
+  }
+
+  .cta {
+    padding: 60px 25px;
+  }
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 30px;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.contact-form textarea,
+.contact-form input {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  font-family: "Vazir";
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+@media (max-width: 900px) {
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+}
